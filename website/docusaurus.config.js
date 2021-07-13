@@ -143,8 +143,22 @@ module.exports = {
 				},
 				blog: false,
 				theme: {
-					customCss: require.resolve('./src/css/custom.css'),
+					customCss: require.resolve('./src/css/index.css'),
 				},
+			},
+		],
+	],
+	plugins: [
+		[
+			'@easyops-cn/docusaurus-search-local',
+			{
+				hashed: true,
+				docsRouteBasePath: ['/'],
+
+				// Workaround for docs base path being /.
+				// See https://github.com/easyops-cn/docusaurus-search-local/issues/42.
+				indexPages: true,
+				indexBlog: false,
 			},
 		],
 	],
